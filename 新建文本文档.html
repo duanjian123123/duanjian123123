@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>段健 - 个人简历</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Microsoft YaHei', 'Segoe UI', Tahoma, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7f9;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a4b8c 0%, #2a6bb3 100%);
+            color: white;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        .profile-img {
+            width: 160px;
+            height: 200px;
+            background-color: #e0e6ed;
+            border: 3px solid white;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            color: #8a9eb3;
+            font-size: 14px;
+            text-align: center;
+            padding: 10px;
+        }
+        
+        .header-content {
+            flex: 1;
+        }
+        
+        h1 {
+            font-size: 32px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+        
+        .title {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            font-size: 15px;
+        }
+        
+        .contact-item i {
+            margin-right: 8px;
+            font-size: 16px;
+        }
+        
+        section {
+            padding: 25px 30px;
+            border-bottom: 1px solid #eaecef;
+        }
+        
+        h2 {
+            color: #1a4b8c;
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #eaecef;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 10px;
+        }
+        
+        .education-item, .project-item, .job-item {
+            margin-bottom: 20px;
+        }
+        
+        .education-header, .project-header, .job-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .institution, .company {
+            font-weight: 600;
+            font-size: 18px;
+            color: #2a6bb3;
+        }
+        
+        .date {
+            color: #6a737c;
+            font-size: 15px;
+        }
+        
+        .degree, .role {
+            font-style: italic;
+            color: #4a5568;
+            margin-bottom: 5px;
+        }
+        
+        .description {
+            color: #4a5568;
+            text-align: justify;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-category {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #2a6bb3;
+        }
+        
+        .skill-category h3 {
+            margin-bottom: 10px;
+            color: #2a6bb3;
+            font-size: 17px;
+        }
+        
+        .skill-list {
+            list-style-type: none;
+        }
+        
+        .skill-list li {
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list li:before {
+            content: "•";
+            color: #2a6bb3;
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-right: 5px;
+        }
+        
+        .publication-item {
+            margin-bottom: 15px;
+            padding-left: 15px;
+            border-left: 3px solid #eaecef;
+        }
+        
+        .publication-title {
+            font-weight: 600;
+            color: #2c5282;
+        }
+        
+        .publication-authors {
+            color: #4a5568;
+            font-style: italic;
+        }
+        
+        .publication-journal {
+            color: #718096;
+        }
+        
+        .award-item {
+            margin-bottom: 10px;
+            display: flex;
+        }
+        
+        .award-item:before {
+            content: "🏆";
+            margin-right: 10px;
+        }
+        
+        .self-assessment {
+            background: #f1f7ff;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #2a6bb3;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #718096;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-img {
+                margin-right: 0;
+                margin-bottom: 20px;
+                width: 140px;
+                height: 180px;
+            }
+            
+            .contact-info {
+                justify-content: center;
+            }
+            
+            .education-header, .project-header, .job-header {
+                flex-direction: column;
+            }
+            
+            .date {
+                margin-top: 5px;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="profile-img">
+                照片区域<br>(可点击上传或拖放图片)
+            </div>
+            <div class="header-content">
+                <h1>段健</h1>
+                <div class="title">船舶与海洋工程博士</div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-birthday-cake"></i>
+                        1990.09
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-user"></i>
+                        汉族 | 中共党员
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-graduation-cap"></i>
+                        武汉理工大学博士研究生
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        18621850552
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        18621850552@163.com
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        湖北武汉
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i>教育背景</h2>
+            <div class="education-item">
+                <div class="education-header">
+                    <div class="institution">武汉理工大学</div>
+                    <div class="date">2020.09 - 至今</div>
+                </div>
+                <div class="degree">船舶与海洋工程专业 博士研究生</div>
+                <div class="description">
+                    <p>成绩排名专业前<strong>10%</strong>，研究方向：结构力学/结构优化设计；流体力学；流固耦合；钢结构可靠性。</p>
+                    <p>博士论文题目：破损船体在波浪载荷作用下崩溃特性研究</p>
+                    <p>导师：裴志勇教授</p>
+                </div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <div class="institution">上海海事大学</div>
+                    <div class="date">2017.09 - 2019.06</div>
+                </div>
+                <div class="degree">船舶与海洋工程专业 硕士研究生</div>
+                <div class="description">
+                    <p>成绩排名专业前<strong>20%</strong>，研究方向：船舶与海洋工程结构物设计与制造</p>
+                </div>
+            </div>
+            
+            <div class="education-item">
+                <div class="education-header">
+                    <div class="institution">武汉理工大学</div>
+                    <div class="date">2012.09 - 2016.06</div>
+                </div>
+                <div class="degree">船舶与海洋工程专业 本科</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2><i class="fas fa-project-diagram"></i>项目经历</h2>
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="company">67.6m 多用途货船舱段局部强度直接计算</div>
+                    <div class="date">2021.12 - 2023.01</div>
+                </div>
+                <div class="role">主要负责人</div>
+                <div class="description">
+                    <p>使用 MSC.Patran 软件建立货舱结构有限元模型，对舱段结构在设计载荷下的结构响应及局部强度进行仿真分析，根据 CCS 规范进行强度校核并对其进行结构优化设计，最终撰写报告并顺利结题。</p>
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="company">668TEU 沿海敞口集装箱船结构强度计算</div>
+                    <div class="date">2021.08 - 2022.11</div>
+                </div>
+                <div class="role">主要负责人</div>
+                <div class="description">
+                    <p>使用 MSC.Patran 软件建立三舱段式结构有限元模型，对货舱区域在总体载荷和局部载荷下的结构响应及强度进行仿真分析，对舱口角隅处作细化模型分析和强度评估，根据 CCS 规范进行强度校核并进一步对其进行优化设计，最终撰写报告并顺利结题。</p>
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="company">小清河河海直达船理论评估研究</div>
+                    <div class="date">2021.05 - 2023.02</div>
+                </div>
+                <div class="role">主要负责人</div>
+                <div class="description">
+                    <p>首先分析作用于船体结构的载荷工况及其组合，基于经典结构力学理论对典型船体板、梁等进行理论分析，确定满足基本强度要求的板厚及梁剖面尺寸；再建立有限元模型进行总纵强度与稳定性校核，进而确定结构设计方案。</p>
+                </div>
+            </div>
+            
+            <div class="project-item">
+                <div class="project-header">
+                    <div class="company">特定航线宽扁型江海直达船体结构动力崩溃机理研究</div>
+                    <div class="date">2021.05 - 2022.10</div>
+                </div>
+                <div class="role">主要参与人</div>
+                <div class="description">
+                    <p>为了评估新一代宽扁型江海直达船的结构强度和刚度，研究典型结构在波浪载荷下的逐次崩溃特性，开展仿真分析及模型实验。负责使用 Abaqus 软件对江海直达船结构极限强度进行非线性有限元分析，并使用 Matlab 软件开发波浪载荷数据处理程序；开展波浪中船体结构逐次崩溃实验，负责模型的设计与加工，分布式光纤传感器的布置与安装，实验工况的设计与开展以及实验数据处理。并结合数值仿真对实验进行对比分析，总结和完成报告撰写。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="publications">
+            <h2><i class="fas fa-book"></i>科研成果</h2>
+            <div class="publication-item">
+                <div class="publication-title">Research on collapse behaviour of damaged hull considering fluid-structure interaction effect</div>
+                <div class="publication-authors">Duan Jian, Pei Zhiyong, Wu Weiguo</div>
+                <div class="publication-journal">Ocean Engineering, 2025 (JCR Q1 Top期刊) - 流固耦合方向</div>
+            </div>
+            
+            <div class="publication-item">
+                <div class="publication-title">A CFD-FEA coupling method for collapse characteristics analysis on bulk carriers under waves after flooding</div>
+                <div class="publication-authors">Duan Jian, Pei Zhiyong, Zhang Lei</div>
+                <div class="publication-journal">Ocean Engineering, 2025, 324: 120787 (JCR Q1 Top期刊) - 流固耦合方向</div>
+            </div>
+            
+            <div class="publication-item">
+                <div class="publication-title">The influence of lateral pressure on ultimate strength of ship structure</div>
+                <div class="publication-authors">Duan Jian, Pei Zhiyong, Zhang Lei, et al.</div>
+                <div class="publication-journal">Ships and Offshore Structures, 2024: 1-15 (JCR Q2) - 结构力学方向</div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-title">Research on collapse characteristics of container ship double bottom structure considering lateral pressure</div>
+                <div class="publication-authors">Duan Jian, Pei Zhiyong, Wu Weiguo</div>
+                <div class="publication-journal">Proceedings of the 35th Asian-Pacific Technical Exchange and Advisory Meeting on Marine Structures. Vladivostok,2022. –结构力学方向</div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-title">A study on rational structural design of river-sea-going ship hull</div>
+                <div class="publication-authors">Kang Yuhan , Pei Zhiyong , Duan Jian , et al.</div>
+                <div class="publication-journal">Proceedings of the 34th Asian-Pacific Technical Exchange and Advisory Meeting on Marine Structures. Turkey,2021. –结构力学方向</div>
+            </div>
+
+             <div class="publication-item">
+                <div class="publication-title">基于软性跨介质的仿生潜空航行器设计</div>
+                <div class="publication-authors">张磊,张智勇,苗洋,段健，等</div>
+                <div class="publication-journal">中国舰船研究（中文核心）2024,1-11. –流体力学方向</div>
+            </div>
+
+            <div class="publication-item">
+                <div class="publication-title">均匀流下两柔性梁纵列行为变化研究</div>
+                <div class="publication-authors">张磊,陈华芳,刘斌,段健,等</div>
+                <div class="publication-journal">力学学报,2024,56(11):3165-3177 (EI 顶刊) - 流体力学方向</div>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2><i class="fas fa-tools"></i>专业技能</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>几何建模软件</h3>
+                    <ul class="skill-list">
+                        <li>熟练运用 Solidworks、AutoCAD、PROE、CATIA</li>
+                        <li>精通 Photoshop、Origin 等设计制图软件</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>有限元分析</h3>
+                    <ul class="skill-list">
+                        <li>熟练运用 PATRAN、ANSYS、ABAQUS 等软件</li>
+                        <li>进行静态、冲击、振动等作用下结构的动态响应分析</li>
+                        <li>探究运用 ANSYS 软件建立船舶数字孪生体的方法</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>流体分析</h3>
+                    <ul class="skill-list">
+                        <li>运用 Star CCM+ / Fluent 等流体分析软件</li>
+                        <li>利用联合 Star CCM+ 与 ABAQUS 进行流固耦合分析</li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <h3>编程与实验技术</h3>
+                    <ul class="skill-list">
+                        <li>熟练掌握 MATLAB 编程语言</li>
+                        <li>能结合 MATLAB 对 ABAQUS 等软件进行二次开发</li>
+                        <li>熟练掌握水弹性波浪载荷试验技术</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2><i class="fas fa-briefcase"></i>工作经历</h2>
+            <div class="job-item">
+                <div class="job-header">
+                    <div class="company">武昌船舶重工股份有限公司 - 减震降噪所</div>
+                    <div class="date">2019.06 - 2020.06</div>
+                </div>
+                <div class="role">助理工程师</div>
+                <div class="description">
+                    <p>依据部门领导要求，完成相应特种船舶以及军工产品的初步设计、详细设计和工艺文件的编制工作，并参与产品的现场配建工作。</p>
+                </div>
+            </div>
+            
+            <div class="job-item">
+                <div class="job-header">
+                    <div class="company">中国船级社上海分社 - 审图中心</div>
+                    <div class="date">2018.06 - 2018.11</div>
+                </div>
+                <div class="role">实习生</div>
+                <div class="description">
+                    <p>依据相应的航行船舶指导文件、船舶建造规范和 Compass 有限元计算软件完成 2001TEU 集装箱船和 800PCC 内河滚装船船体结构图纸审阅工作，主要完成总布置图、典型横剖面图、肋骨型线图、船舶结构图等图纸的结构审图工作。</p>
+                </div>
+            </div>
+            
+            <div class="job-item">
+                <div class="job-header">
+                    <div class="company">广船国际有限公司 - 船体设计一室</div>
+                    <div class="date">2016.03 - 2017.07</div>
+                </div>
+                <div class="role">助理工程师</div>
+                <div class="description">
+                    <p>协助指导老师完成 5WT-B3 和30.8WT船船体总布置图、基本结构图、结构图等图纸的详细设计工作。协助指导老师与舾装和总体设计室相应设计师沟通交叉设计里所包含的技术问题并处理相应的技术问题，完成了 5WT-B3 和30.8WT船的船体结构设计工作。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="awards">
+            <h2><i class="fas fa-award"></i>所获奖励</h2>
+            <div class="award-item">2020/2021/2022/2023 学年获得博士研究生二等奖学金</div>
+            <div class="award-item">第一届武汉理工大学研究生未来飞行器创新大赛三等奖（排名第二）</div>
+        </section>
+
+        <section id="campus">
+            <h2><i class="fas fa-university"></i>校园经历</h2>
+            <div class="award-item">2020.09-2022.09 担任武汉理工大学交通学院2020级博士班团支部书记，学习委员</div>
+            <div class="award-item">2017.09-2019.06 担任班级副班长，英语课代表，班级学习委员</div>
+        </section>
+
+        <section id="assessment">
+            <h2><i class="fas fa-user-check"></i>自我评价</h2>
+            <div class="self-assessment">
+                <p>博士期间聚焦船体结构在波浪载荷作用下崩溃特性机理研究，探索出CFD与FEA耦合分析方法，实现了基于单向和双向耦合理论分析船体结构在波浪载荷作用下崩溃特性机理研究，弥补了现有基于CFD和FEA耦合分析方法分析船体结构响应仅局限于线弹性阶段缺乏对崩溃特性分析的空缺。</p>
+                <p>具有一定的科研能力和团队合作精神；有较强的学习能力和进取精神，喜欢挑战，动手能力强；能吃苦耐劳，有毅力，乐观积极，压力承受能力强。</p>
+                <p><strong>兴趣爱好：</strong>篮球、足球、吉他、摄影等</p>
+            </div>
+        </section>
+
+        <footer>
+            <p>最后更新日期: 2024年12月 | 版权所有 © 2024 段健</p>
+        </footer>
+    </div>
+
+    <script>
+        // 简单的图片上传预览功能
+        document.querySelector('.profile-img').addEventListener('click', function() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = 'image/*';
+            
+            input.onchange = function(e) {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(event) {
+                        document.querySelector('.profile-img').style.backgroundImage = `url(${event.target.result})`;
+                        document.querySelector('.profile-img').innerHTML = '';
+                        document.querySelector('.profile-img').style.backgroundSize = 'cover';
+                        document.querySelector('.profile-img').style.backgroundPosition = 'center';
+                    };
+                    reader.readAsDataURL(file);
+                }
+            };
+            
+            input.click();
+        });
+        
+        // 支持拖放上传
+        document.querySelector('.profile-img').addEventListener('dragover', function(e) {
+            e.preventDefault();
+            this.style.border = '3px dashed #2a6bb3';
+        });
+        
+        document.querySelector('.profile-img').addEventListener('dragleave', function(e) {
+            e.preventDefault();
+            this.style.border = '3px solid white';
+        });
+        
+        document.querySelector('.profile-img').addEventListener('drop', function(e) {
+            e.preventDefault();
+            this.style.border = '3px solid white';
+            
+            const file = e.dataTransfer.files[0];
+            if (file && file.type.match('image.*')) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    document.querySelector('.profile-img').style.backgroundImage = `url(${event.target.result})`;
+                    document.querySelector('.profile-img').innerHTML = '';
+                    document.querySelector('.profile-img').style.backgroundSize = 'cover';
+                    document.querySelector('.profile-img').style.backgroundPosition = 'center';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
+</body>
+</html>
